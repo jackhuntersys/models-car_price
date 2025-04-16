@@ -6,6 +6,24 @@ from sklearn.metrics import accuracy_score
 model = load('car_price_model.joblib')
 
 
-st.set_page_config(page_title=' app',layout='centered')
-st.title('bu app emas')
-st.markdown('bu markdown!')
+#Page, UI header
+st.set_page_config(page_title='Find Audi used car price app',layout='centered')
+st.title('Used Cars')
+st.markdown('Please enter your audi car details and calculate price')
+
+# User inputlari uchun
+model_name = st.text_input('Model name')
+year = st.number_input('Produced year')
+transmission = st.text_input('Auto')
+
+
+
+
+#Prediction logic
+if st.button('Calculate your car price'):
+    input_date=pd.DataFrame([{
+        'model':model_name,
+        'year':year,
+        'transmission':transmission
+        
+    }])
