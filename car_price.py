@@ -14,7 +14,7 @@ st.markdown('Please enter your audi car details and calculate price')
 # User inputlari uchun
 model_name = st.text_input('Model name')
 year = st.number_input('Produced year')
-transmission = st.text_input('Auto')
+transmission = st.text_input('Transmission', 'Auto')
 
 
 
